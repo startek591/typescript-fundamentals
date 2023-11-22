@@ -13,14 +13,44 @@
 //   return { name: "reactjs", price: 399 };
 // }
 
+// type User = {
+//   name: string;
+//   email: string;
+//   isActive: boolean;
+// };
+
+// function createUser(user: User) {
+//   return { name: "", email: "", isActive: true };
+// }
+
+// createUser({ name: "", email: "", isActive: true });
+
 type User = {
+  readonly _id: string;
   name: string;
   email: string;
   isActive: boolean;
+  credcardDetails?: number;
 };
 
-function createUser(user: User) {
-  return { name: "", email: "", isActive: true };
-}
+let myUser: User = {
+  _id: "1245",
+  name: "j",
+  email: "j@gmail.com",
+  isActive: false,
+};
 
-createUser({ name: "", email: "", isActive: true });
+type cardNumber = {
+  cardNumber: string;
+};
+
+type cardDate = {
+  cardDate: string;
+};
+
+type cardDetails = cardNumber &
+  cardDate & {
+    cvv: number;
+  };
+
+myUser.email = "j@h.com";
