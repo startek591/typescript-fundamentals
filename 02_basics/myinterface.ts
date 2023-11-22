@@ -8,8 +8,18 @@ interface User {
   getCoupon(couponname: string, value: number): number;
 }
 
-const jonathan: User = {
+interface User {
+  githubToken?: string;
+}
+
+interface Admin extends User {
+  role: "admin" | "ta" | "learner";
+}
+
+const jonathan: Admin = {
   dbId: 22,
+  role: "admin",
+  githubToken: "star@github",
   email: "j@gmail.com",
   userId: 2211,
   startTrial: () => {
@@ -24,3 +34,7 @@ const jonathan: User = {
 };
 
 jonathan.email = "j@hc.com";
+
+// Differences between interfaces and types
+// Interfaces can be reopened (add more properties too) and types can't
+// Another reason is the syntax
