@@ -20,3 +20,19 @@ function printAll(strs) {
 function isAdminAccount(account) {
     return "isAdmin" in account ? account.isAdmin : false;
 }
+function logValue(x) {
+    return x instanceof Date ? x.toUTCString() : x.toUpperCase();
+}
+function isFish(pet) {
+    return pet.swim !== undefined;
+}
+function getFood(pet) {
+    if (isFish(pet)) {
+        pet;
+        return "fish food";
+    }
+    else {
+        pet;
+        return "bird Food";
+    }
+}

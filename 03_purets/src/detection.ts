@@ -32,3 +32,24 @@ interface Admin {
 function isAdminAccount(account: User | Admin) {
   return "isAdmin" in account ? account.isAdmin : false;
 }
+
+function logValue(x: Date | string) {
+  return x instanceof Date ? x.toUTCString() : x.toUpperCase();
+}
+
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+
+function isFish(pet: Fish | Bird): pet is Fish {
+  return (pet as Fish).swim !== undefined;
+}
+
+function getFood(pet: Fish | Bird) {
+  if (isFish(pet)) {
+    pet;
+    return "fish food";
+  } else {
+    pet;
+    return "bird Food";
+  }
+}
