@@ -17,3 +17,6 @@ function printAll(strs) {
         }
     }
 }
+function isAdminAccount(account) {
+    return "isAdmin" in account ? account.isAdmin : false;
+}
