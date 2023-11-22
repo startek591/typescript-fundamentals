@@ -8,7 +8,7 @@
 //   }
 // }
 class User {
-  private _courseCount = 1;
+  protected _courseCount = 1;
   readonly city: string = "Atlanta";
   constructor(public email: string, public name: string) {}
 
@@ -29,6 +29,13 @@ class User {
       throw new Error("Course count should be more than 1");
     }
     this._courseCount = courseNum;
+  }
+}
+
+class SubUser extends User {
+  isFamily: boolean = true;
+  changeCourseCount() {
+    this._courseCount = 4;
   }
 }
 
